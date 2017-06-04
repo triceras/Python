@@ -1,5 +1,6 @@
 import pandas as pd
 from nba_py import team
+import matplotlib.pyplot as plt
 
 pistons = team.TeamPassTracking(1610612765)
 pistons.passes_made().head(10)
@@ -123,4 +124,9 @@ def custom_boxscore(roster_id):
     return df_boxscore
 
 df_detroit_box_scores = custom_boxscore(detroit_id)
-df_detroit_box_scores.head(10)
+print (df_detroit_box_scores.columns)
+
+plt.plot(df_boxscore['OPEN_EFG'], df_boxscore['GAME_DATE'])
+plt.show()
+
+
